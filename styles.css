@@ -39,7 +39,7 @@ body {
 .rainbow {
     font-size: 2em;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     animation: rainbow-animation 5s infinite;
 }
@@ -53,11 +53,3 @@ body {
     margin-top: 20px;
     font-size: 1.2em;
 }
-
-/* script.js */
-document.addEventListener("DOMContentLoaded", function() {
-    // 仮の訪問者カウンターをランダムに表示
-    const visitorCountElement = document.getElementById("visitorCount");
-    const randomCount = Math.floor(Math.random() * 10000) + 1;
-    visitorCountElement.textContent = randomCount.toString().padStart(6, '0');
-});
