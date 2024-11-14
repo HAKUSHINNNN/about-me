@@ -1,8 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 仮の訪問者カウンターをランダムに表示
+    // 訪問者カウンターの表示（外部APIから取得）
     const visitorCountElement = document.getElementById("visitorCount");
-    const randomCount = Math.floor(Math.random() * 10000) + 1;
-    visitorCountElement.textContent = randomCount.toString().padStart(6, '0');
+
+    // 仮想のAPI URLを使用（ここを実際のAPIエンドポイントに変更してください）
+    const apiURL = "https://example.com/api/visitor-count";
+
+    fetch(apiURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            visitorCountElement.textContent = data.count.toString().padStart(6, '0');
+        })
+        .catch(error => {
+            console.error('Error fetching visitor count:', error);
+            visitorCountElement.textContent = "取得エラー";
+        });
 
     // クリック時にポップアップを表示する
     const menuItems = document.querySelectorAll('#sidebar ul li a');

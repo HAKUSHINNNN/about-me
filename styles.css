@@ -7,7 +7,7 @@ body {
 #sidebar {
     width: 20%;
     float: left;
-    background-color: #E6E6FA;
+    background: #E6E6FA;
     padding: 10px;
     height: 100vh;
 }
@@ -15,9 +15,11 @@ body {
 #content {
     width: 75%;
     float: right;
-    background-color: #E0FFFF;
+    background: url("img/bg1.gif");
+    background-size: auto;
     padding: 10px;
 }
+
 
 .marquee-text {
     font-size: 1.2em;
