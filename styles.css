@@ -1,0 +1,63 @@
+/* styles.css */
+body {
+    background: url('https://via.placeholder.com/50') repeat; /* 背景に繰り返される画像 */
+    font-family: "MS PGothic", sans-serif;
+}
+
+#sidebar {
+    width: 20%;
+    float: left;
+    background-color: #E6E6FA;
+    padding: 10px;
+    height: 100vh;
+}
+
+#content {
+    width: 75%;
+    float: right;
+    background-color: #E0FFFF;
+    padding: 10px;
+}
+
+.marquee-text {
+    font-size: 1.2em;
+    color: #FF69B4;
+}
+
+.blinking {
+    font-size: 1.5em;
+    color: red;
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.rainbow {
+    font-size: 2em;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow-animation 5s infinite;
+}
+
+@keyframes rainbow-animation {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+#counter {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* script.js */
+document.addEventListener("DOMContentLoaded", function() {
+    // 仮の訪問者カウンターをランダムに表示
+    const visitorCountElement = document.getElementById("visitorCount");
+    const randomCount = Math.floor(Math.random() * 10000) + 1;
+    visitorCountElement.textContent = randomCount.toString().padStart(6, '0');
+});
