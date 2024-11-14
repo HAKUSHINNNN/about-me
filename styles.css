@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    background: url('https://via.placeholder.com/50') repeat; /* 背景に繰り返される画像 */
+    background: #00FFFF repeat; /* 背景に繰り返される画像 */
     font-family: "MS PGothic", sans-serif;
 }
 
